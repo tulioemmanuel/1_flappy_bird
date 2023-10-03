@@ -1,0 +1,9 @@
+{
+    "screen_width" : 800,
+    "screen_height" : 600,
+    "FPS" : 30,
+    "gravity" : 1,
+    "jump_force": 5,
+    "pipe_width": 100,
+    "max_pipe_height":500
+}
