@@ -8,7 +8,7 @@ class Player(Sprite):
     def __init__(self):
         Sprite.__init__(self)
         self.image = Surface([50,50])
-        self.image.fill((101,255,0))
+        self.image.fill((151,155,0))
         self.rect = self.image.get_rect()
         self.x = 0
         self.y = 0
