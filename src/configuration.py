@@ -1,4 +1,5 @@
 import json
+import os 
 
 class SingletonMeta(type):
     _instances = {}
@@ -14,7 +15,9 @@ class Configuration(metaclass=SingletonMeta):
     SCREEN_SIZE = None
 
     def __init__(self):
-        self.configuration_json = json.load(open('config.json'))
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        
+        self.configuration_json = json.load(open(f'{dir_path}/config.json'))
         self.SCREEN_SIZE = ((self.configuration_json['screen_width'],self.configuration_json['screen_height']))
         self.FPS = self.configuration_json['FPS']
         self.gravity = self.configuration_json['gravity']
