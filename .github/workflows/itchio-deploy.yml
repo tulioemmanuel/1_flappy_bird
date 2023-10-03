@@ -1,0 +1,30 @@
+name: Itch.io Deploy Workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - src/**
+jobs:
+  itchio-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3    
+      - name: Setup Python 3.10
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Instalando Pygbag
+        run: python -p pip install pygbag
+      - name: Build
+        run : python -m pygbag --archive --build --app_name FlapBird src/ 
+      - name: Deploy
+        uses: josephbmanley/butler-publish-itchio-action@v1.0.3
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.ITCH_IO_API_KEY }}
+          CHANNEL: HTML
+          ITCH_GAME: 1-flappybird
+          ITCH_USER: tulioemmanuel
+          PACKAGE: src/build/web.zip        
+          
