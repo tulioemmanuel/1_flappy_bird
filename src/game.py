@@ -95,14 +95,14 @@ class Game(object):
 
     def render(self):
         self.screen.fill((0, 0, 0))
-        self.screen.blit(
-            pygame.transform.scale(
-                self.assets.sprites["backgroundday"],
-                (self.screen.get_rect().width, self.screen.get_rect().height),
-            ),
-            (0, 0),
-            self.screen.get_rect(),
-        )
+        # self.screen.blit(
+        #     pygame.transform.scale(
+        #         self.assets.sprites["backgroundday"],
+        #         (self.screen.get_rect().width, self.screen.get_rect().height),
+        #     ),
+        #     (0, 0),
+        #     self.screen.get_rect(),
+        # )
         self.pipe_spawner.pipes.draw(self.screen)
         self.screen.blit(self.player.image, self.player.rect)
         if self.touched:
