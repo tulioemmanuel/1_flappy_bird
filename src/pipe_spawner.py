@@ -1,7 +1,8 @@
 import random
-from pygame import Surface
+import pygame 
 from pygame.sprite import Sprite,Group
 from configuration import Configuration
+from assets import Assets   
 
 config = Configuration()
 
@@ -9,8 +10,12 @@ config = Configuration()
 class Pipe(Sprite):
     def __init__(self,flip):
         Sprite.__init__(self)
-        self.image = Surface([config.pipe_width, config.max_pipe_height])
-        self.image.fill((255, 255, 255))
+
+        self.image = Assets().sprites['pipegreen']
+        
+        if not flip:
+            self.image = pygame.transform.flip(self.image,False,True)
+
         self.rect = self.image.get_rect()
         self.rect.x = config.SCREEN_SIZE[0]
         
