@@ -1,7 +1,7 @@
 import os
 import pygame
 
-ASSETS_DIR = os.getcwd() + "\\assets\\"
+ASSETS_DIR = os.getcwd() + "\\src\\assets"
 
 
 class AssetsMeta(type):
