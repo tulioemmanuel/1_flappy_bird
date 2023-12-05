@@ -53,3 +53,7 @@ class PipeSpawner(object):
 
     def spawn(self):
         self.pipes.add(Pipe(self.flip))
+
+    def clean(self):
+        self.pipes = Group()
+        self.current_delta = 0

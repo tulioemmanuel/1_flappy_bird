@@ -28,5 +28,12 @@ class Player(Sprite):
         if self.rect.y + self.vy > 0:
             self.jump_force = config.jump_force
             self.current_sprite = 1
+    
+    def set_initial_position(self):
+        self.rect = self.image.get_rect()
+        self.rect.x = 10       
+        self.vy = 0
+        self.jump_force = 0
+        self.current_sprite = 0         
 
         

@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - src/**
 jobs:
   itchio-deploy:
     runs-on: ubuntu-latest
@@ -17,7 +19,7 @@ jobs:
       - name: Instalando Pygbag
         run: python -m pip install pygbag
       - name: Build
-        run: python -m pygbag --archive --app_name FlapBird main.py
+        run: python -m pygbag --archive --build --app_name FlapBird src/
       - name: Deploy
         uses: josephbmanley/butler-publish-itchio-action@v1.0.3
         env:
@@ -25,4 +27,4 @@ jobs:
           CHANNEL: HTML
           ITCH_GAME: 1-flappybird
           ITCH_USER: tulioemmanuel
-          PACKAGE: build/web.zip
+          PACKAGE: src/build/web.zip
