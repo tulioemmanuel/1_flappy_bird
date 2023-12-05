@@ -45,12 +45,13 @@ class Game(object):
 
     def run(self):
         self.input()
-        if self.state == GameState.MENU:
-            self.render_menu()
-        elif self.state == GameState.LOOP:
-            if not self.touched:
-                self.update(self.delta)
-                self.render()
+        self.render()
+        # if self.state == GameState.MENU:
+        #     self.render_menu()
+        # elif self.state == GameState.LOOP:
+        #     if not self.touched:
+        #         self.update(self.delta)
+        #         self.render()
 
         pygame.display.flip()
         pygame.display.update()
