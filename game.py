@@ -112,7 +112,7 @@ class Game(object):
         self.draw_bg() # chamar UI no objeto principal
 
         img = pygame.image.load("0.png").convert()
-        # img = pygame.image.load("src/0.png").convert()
+        img = pygame.image.load("src/0.png").convert()
         self.screen.blit(img, self.player.rect)
 
         self.pipe_spawner.pipes.draw(self.screen)
