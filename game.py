@@ -109,23 +109,24 @@ class Game(object):
 
     def render(self):
         self.screen.fill((0, 0, 0))
-        self.draw_bg() # chamar UI no objeto principal
+        # self.draw_bg() # chamar UI no objeto principal
 
-        img = pygame.image.load("0.png").convert()
-        img = pygame.image.load("src/0.png").convert()
-        self.screen.blit(img, self.player.rect)
+        img = pygame.image.load("1.png")
+        self.screen.blit(img, (100,100))
+        img = pygame.image.load("src/1.png")
+        self.screen.blit(img, (0,0))
 
-        self.pipe_spawner.pipes.draw(self.screen)
-        self.screen.blit(self.player.image, self.player.rect)
-        if self.touched:
-            self.screen.blit(
-                self.you_suck_text,
-                (
-                    self.screen.get_rect().w / 2 - self.you_suck_text.get_rect().w / 2,
-                    self.screen.get_rect().h / 2,
-                ),
-            )
-        self.hud.draw(self.screen,self.points) # ou criar um objeto de UI e ter uma lógica apartada
+        # self.pipe_spawner.pipes.draw(self.screen)
+        # self.screen.blit(self.player.image, self.player.rect)
+        # if self.touched:
+        #     self.screen.blit(
+        #         self.you_suck_text,
+        #         (
+        #             self.screen.get_rect().w / 2 - self.you_suck_text.get_rect().w / 2,
+        #             self.screen.get_rect().h / 2,
+        #         ),
+        #     )
+        # self.hud.draw(self.screen,self.points) # ou criar um objeto de UI e ter uma lógica apartada
 
     def check_collision(self):
         if self.player.rect.y - self.player.rect.h >= self.screen.get_rect().h:
