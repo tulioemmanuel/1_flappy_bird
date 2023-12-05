@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - /**
+      - **
 jobs:
   itchio-deploy:
     runs-on: ubuntu-latest
