@@ -141,7 +141,7 @@ class Game(object):
 
     def check_collision(self):
         if self.player.rect.y - self.player.rect.h >= self.screen.get_rect().h:
-            self.touched = True
+            self.state = GameState.LOSE
 
         if pygame.sprite.spritecollide(self.player, self.pipe_spawner.pipes, False):
             self.state = GameState.LOSE
