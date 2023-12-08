@@ -15,6 +15,9 @@ class HUD(object):
         while points // 10 != 0:
             numbers.insert(0,points % 10)
             points = points//10
+            if points // 10 == 0:
+                numbers.insert(0,points)
+                break
         for i,n in enumerate(numbers):            
             screen.blit(self.numbers[str(n)], (self.numbers[str(n)].get_rect().w * i , OFFSET_Y))
 

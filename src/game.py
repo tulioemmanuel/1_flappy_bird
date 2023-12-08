@@ -152,7 +152,7 @@ class Game(object):
         self.screen.blit(
             self.gameover,
             (
-                self.screen.get_rect().w / 2 - self.you_suck_text.get_rect().w / 2 - 10,
+                self.screen.get_rect().w / 2 - self.you_suck_text.get_rect().w / 2,
                 self.screen.get_rect().h / 2,
             ),
         )
