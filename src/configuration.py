@@ -18,6 +18,7 @@ class Configuration(metaclass=SingletonMeta):
         dir_path = os.path.dirname(os.path.realpath(__file__))
         
         self.configuration_json = json.load(open(f'{dir_path}/config.json'))
+        self.TITLE = self.configuration_json['title']
         self.SCREEN_SIZE = ((self.configuration_json['screen_width'],self.configuration_json['screen_height']))
         self.FPS = self.configuration_json['FPS']
         self.gravity = self.configuration_json['gravity']

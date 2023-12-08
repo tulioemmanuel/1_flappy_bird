@@ -81,6 +81,18 @@ class Assets(metaclass=AssetsMeta):
             os.path.join(ASSETS_DIR, "sprites", "background-day.png")
         )
 
+        self.sprites["menu"] = pygame.image.load(
+            os.path.join(ASSETS_DIR, "sprites", "message.png")
+        )   
+
+        self.sprites["gameover"] = pygame.image.load(
+            os.path.join(ASSETS_DIR, "sprites", "gameover.png")
+        )   
+
+        self.sprites["floor"] = pygame.image.load(
+            os.path.join(ASSETS_DIR, "sprites", "base.png")
+        )   
+
         self.sprites["numbers"] = {
             "0": pygame.image.load(os.path.join(ASSETS_DIR, "sprites", "0.png")),
             "1": pygame.image.load(os.path.join(ASSETS_DIR, "sprites", "1.png")),

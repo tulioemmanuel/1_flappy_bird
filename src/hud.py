@@ -1,3 +1,4 @@
+import pygame
 from assets import Assets
 
 OFFSET_X = 30
@@ -11,9 +12,9 @@ class HUD(object):
 
     def draw(self, screen,points):
         numbers = []
-        while points % 10 > 0:
+        while points // 10 != 0:
             numbers.insert(0,points % 10)
             points = points//10
         for i,n in enumerate(numbers):            
-            screen.blit(self.numbers[str(n)], (self.numbers[str(n)].get_rect().w * i, OFFSET_Y))
+            screen.blit(self.numbers[str(n)], (self.numbers[str(n)].get_rect().w * i , OFFSET_Y))
 

@@ -19,7 +19,7 @@ class Pipe(Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = config.SCREEN_SIZE[0]
         
-        offset = random.randint(10 , 500)
+        offset = random.randint(10 , 200)
 
         self.rect.y = 0 - offset if not flip else config.SCREEN_SIZE[1] - self.rect.h + offset
         self.vx = 0
@@ -45,7 +45,7 @@ class PipeSpawner(object):
             self.spawn()
             self.current_delta = 0
             self.flip = not self.flip
-
+        
         for pipe in self.pipes:
             pipe.rect.x -= PipeSpawner.PIPE_SPEED
             if pipe.rect.x + pipe.rect.w <= 0:
