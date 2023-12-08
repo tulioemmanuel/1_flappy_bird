@@ -1,2 +1,4 @@
 # TODO:
-- Bug do ZERO na pontuação
+- Gravidade
+- Pontuação
+- Mostrar pontuação no fim
