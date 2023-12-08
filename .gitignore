@@ -1,6 +1,9 @@
+.gitignore
 __pycache__/
 .vscode/
 build/
 venv/
 src/build/
+src/__pycache__/
+src/**/__pycache__/
 
